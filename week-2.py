@@ -1,12 +1,13 @@
-'''
+"""
 /*
  * Program: Promineo Tech Data Engineering (Big Data)
  * Author:  Samuel Ajao
  * Assignment: Week 04 Technical Assignment
  * Create Date: September 26, 2024
  */
-'''
-from ftplib import print_line
+"""
+
+#from ftplib import print_line
 
 """
 Part 1: Lists
@@ -95,3 +96,41 @@ for key, value in my_squares.items():
 """
 Part 4: Conditional Logic
 """
+# 1. Create a variable called temperature and set it to a number representing the current temperature (in degrees Celsius).
+temperature = 17.00 #celcius
+
+# 2. Using an if statement, print out a message telling the user whether they should wear a coat or not based on the
+# current temperature. If the temperature is below 10 degrees Celsius, print out a message telling the user to wear a
+# coat. If the temperature is 10 degrees Celsius or above, print out a message telling the user that they do not need to wear a coat.
+
+print("\nProblem 4.2. Should you where a coat?")
+if temperature < 10:
+    print("You should wear a coat.")
+elif temperature >= 10:
+    print("You do not need to wear a coat.")
+
+# 3. Create a variable called username and set it to a string representing the user's username.
+username = "Anna User00"
+
+# 4. Using an if statement, print out a message telling the user whether their username is too long or not. If the
+# username is more than 10 characters long, print out a message telling the user that their username is too long. If the
+# username is 10 characters or less, print out a message telling the user that their username is okay.
+name_length = len(username)
+
+print("\nProblem 4.4. Is the user's name too long?")
+if name_length > 10:
+    print("The user's name is too long.")
+elif name_length <= 10:
+    print("The length of the user's name is acceptable.")
+
+# 5. Create a list called numbers_2 that contains the numbers 1 through 5.
+numbers_2 = []
+for t in range(5):
+    numbers_2.append(t+1)
+
+# 6. Using a for loop and an if statement, print out only the even numbers in the numbers_2 list.
+print("\nProblem 4.6. Using a for loop and an if statement, print out only the even numbers in the numbers_2 list.")
+for i in range(5):
+    if (numbers_2[i] % 2) == 0:
+        print(numbers_2[i])
+
