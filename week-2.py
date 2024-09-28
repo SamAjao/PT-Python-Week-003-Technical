@@ -6,12 +6,14 @@
  * Create Date: September 26, 2024
  */
 """
+from multiprocessing.connection import families
 
 #from ftplib import print_line
 
 """
 Part 1: Lists
 """
+import json
 
 # 1. Create a list called shopping_list that contains at least 5 items you need to buy at the grocery store
 shopping_list = ["milk", "eggs", "bacon", "bread", "coffee"]
@@ -134,3 +136,54 @@ for i in range(5):
     if (numbers_2[i] % 2) == 0:
         print(numbers_2[i])
 
+
+"""
+Part 5: Wrangling Data
+"""
+# 1. Read the 'new_families.txt' file (included in your materials) into memory and assign the variable, “file” to the object.
+data = open("new_families.txt", 'r')
+
+# 2. Print(file) # Can you read the data in the file?
+print("\nProblem 5.2. Print(file) # Can you read the data in the file?")
+print(data)
+
+
+# 3. What is the datatype of the file variable?
+
+# 4. Write a FOR loop to iterate over the Text IO object referenced by the file variable and print each iteration of
+# the text. How many results did you get back? #HINT shouldn't be a very large number ;)
+print("\nProblem 5.4. Write a FOR loop to iterate over the Text IO object referenced by the file variable...")
+print_count = 0
+for f in data:
+    print(f)
+    print(type(f)) #Problem 5.5
+    print_count += 1 #Problem 5.4
+    json_in = f.replace("'", '"')
+    new_f = json.loads(json_in) #Problem 5.6
+
+print("Iterated", print_count, "time(s)") #Problem 5.4
+print(new_f)
+print(type(new_f))
+#print(data.read())
+
+#data.close()
+
+# 5. What is the datatype of the object returned in the iteration?
+# Iterable returns a string.
+print("\nProblem 5.5. What is the datatype of the object returned in the iteration?")
+for e in data:
+    print(type(e))
+
+# 6. What happens when you try to parse the first item in the list?
+print("\nProblem 5.6. What happens when you try to parse the first item in the list?")
+print(new_f)
+print(type(new_f))
+
+# 5.7. Change the string variable into a list of dictionaries type so you can work with it. #HINT: import json
+print("\nProblem 5.7. Change the string variable into a list of dictionaries type so you can work with it")
+
+
+# 5.8. Now that you have a list, print only the second item from the list. What is its type?
+print("\nProblem 5.8. Now that you have a list, print only the second item from the list. What is its type?")
+print(new_f[1])
+print(type(new_f[1]))
